@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Premium Dark Design System for Sutra Technologies
+All colors MUST be HSL. Semantic tokens for consistent theming.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Pure contrast */
+    --background: 0 0% 0%;  /* Pure black */
+    --foreground: 0 0% 100%;  /* Pure white */
+
+    /* Surface Colors */
+    --card: 0 0% 5%;  /* Very dark gray for cards */
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+
+    /* Primary Brand */
+    --primary: 0 0% 100%;  /* White for primary elements */
+    --primary-foreground: 0 0% 0%;  /* Black text on white */
+
+    /* Secondary Surfaces */
+    --secondary: 0 0% 10%;  /* Dark gray */
+    --secondary-foreground: 0 0% 100%;
+
+    /* Muted Elements */
+    --muted: 0 0% 15%;  /* Slightly lighter gray */
+    --muted-foreground: 0 0% 70%;  /* Light gray text */
+
+    /* Accent Colors */
+    --accent: 0 0% 20%;  /* Medium gray for accents */
+    --accent-foreground: 0 0% 100%;
+
+    /* Interactive States */
+    --border: 0 0% 20%;  /* Subtle borders */
+    --input: 0 0% 15%;   /* Input backgrounds */
+    --ring: 0 0% 100%;   /* Focus rings */
+
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Premium Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(0 0% 0%), hsl(0 0% 10%));
+    --gradient-accent: linear-gradient(135deg, hsl(0 0% 10%), hsl(0 0% 20%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 0%), hsl(0 0% 5%));
+
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -15px hsl(0 0% 0% / 0.8);
+    --shadow-glow: 0 0 30px hsl(0 0% 100% / 0.1);
+
+    /* Typography */
+    --font-premium: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+
+    /* Spacing & Layout - Mobile First */
+    --radius: 0.75rem;
+    --container-padding: 1rem;
+
+    /* Mobile-specific spacing */
+    --mobile-section-padding: 4rem 0;
+    --desktop-section-padding: 8rem 0;
+
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .dark {
+    /* Dark mode is default - same values */
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
+    --accent: 0 0% 20%;
+    --accent-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: var(--font-premium);
+  }
+
+  /* Mobile-First Container */
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Premium Typography Scale - Mobile First */
+  .text-display {
+    @apply text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight;
+  }
+
+  .text-heading {
+    @apply text-2xl md:text-4xl lg:text-5xl font-semibold tracking-tight;
+  }
+
+  .text-title {
+    @apply text-lg md:text-xl lg:text-2xl font-medium;
+  }
+
+  .text-body {
+    @apply text-sm md:text-base lg:text-lg leading-relaxed;
+  }
+
+  .text-caption {
+    @apply text-xs md:text-sm text-muted-foreground;
+  }
+
+  /* Premium Interactive Elements - Mobile Optimized */
+  .btn-premium {
+    @apply relative overflow-hidden bg-primary text-primary-foreground px-6 py-3 md:px-8 md:py-4 rounded-xl font-medium 
+           transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm md:text-base
+           before:absolute before:inset-0 before:bg-gradient-to-r before:from-transparent before:via-white/10 before:to-transparent
+           before:translate-x-[-100%] hover:before:translate-x-[100%] before:transition-transform before:duration-700;
+  }
+
+  .card-premium {
+    @apply bg-card border border-border rounded-xl md:rounded-2xl p-6 md:p-8 
+           transition-all duration-300 hover:scale-[1.02] hover:shadow-xl
+           backdrop-blur-sm bg-gradient-to-br from-card to-card/80;
+  }
+
+  /* Smooth Animations */
+  .animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(40px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  /* Premium Hover Effects */
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+
+  .hover-glow {
+    @apply transition-all duration-300 hover:shadow-[0_0_30px_hsl(var(--primary)/0.3)];
+  }
+}
