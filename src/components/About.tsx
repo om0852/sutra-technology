@@ -17,18 +17,6 @@ const About = () => {
               At Sutra Technologies, we're passionate about creating digital solutions that make a difference. 
               Our team combines technical expertise with creative innovation to deliver products that exceed expectations.
             </p>
-
-            <div className="grid grid-cols-2 gap-4 md:gap-6">
-              <div className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-secondary/50 hover-lift">
-                <div className="text-2xl md:text-3xl font-bold mb-2">50+</div>
-                <div className="text-caption">Projects Delivered</div>
-              </div>
-              
-              <div className="text-center p-4 md:p-6 rounded-xl md:rounded-2xl bg-secondary/50 hover-lift">
-                <div className="text-2xl md:text-3xl font-bold mb-2">5+</div>
-                <div className="text-caption">Years Experience</div>
-              </div>
-            </div>
           </div>
 
           <div className="space-y-4 md:space-y-6 animate-slide-up">

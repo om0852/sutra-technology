@@ -6,7 +6,7 @@ import heroTechBg from "@/assets/hero-tech-bg.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16">
+    <section className="relative min-h-[115vh] flex items-center justify-center overflow-hidden pt-16">
       {/* Hero background image */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
@@ -32,9 +32,11 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6 md:pt-8 px-4">
-            <Button variant="premium" size="lg" className="group w-full sm:w-auto">
+            <Button asChild variant="premium" size="lg" className="group w-full sm:w-auto">
+              <a href="/start-project">
               Start Your Project
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
             
             <Button variant="ghost" size="lg" className="hover-glow w-full sm:w-auto">

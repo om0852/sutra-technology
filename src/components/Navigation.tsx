@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, ArrowRight } from "lucide-react";
+import Logo from "@/components/Logo";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -27,12 +29,12 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">S</span>
+          <Link to={"/"} className="flex items-center space-x-2">
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-foreground">
+              <Logo className="w-7 h-7" />
             </div>
             <span className="text-xl font-semibold">Sutra Technologies</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
@@ -55,9 +57,11 @@ const Navigation = () => {
 
           {/* Desktop CTA Button */}
           <div className="hidden md:block">
-            <Button variant="premium" size="default" className="group">
-              Get Started
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            <Button asChild variant="premium" size="default" className="group">
+              <a href="/start-project">
+                Get Started
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              </a>
             </Button>
           </div>
 
@@ -90,9 +94,11 @@ const Navigation = () => {
                 Projects
               </button>
               <div className="pt-4 border-t border-border">
-                <Button variant="premium" size="default" className="w-full group">
-                  Get Started
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                <Button asChild variant="premium" size="default" className="w-full group">
+                  <a href="/start-project">
+                    Get Started
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                  </a>
                 </Button>
               </div>
             </div>
